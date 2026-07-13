@@ -1,25 +1,27 @@
 const cityCatalog = {
-  成都: {
-    province: "四川",
-    roman: "CHENGDU",
-    tagline: "茶馆、老街和热辣小馆，串成不绕路的几天。",
-    hotel: "春熙路附近",
-    hotelPoint: { x: 53, y: 49 },
-    palette: ["#b9d5b2", "#ff6b3d"],
-    weather: ["☀ 28°", "☁ 26°", "🌦 25°", "☀ 29°", "☁ 27°"],
+  武汉: {
+    province: "湖北 · 7/31入住 · 8/2退房",
+    roman: "WUHAN 07.31",
+    tripStart: "2026-07-31",
+    tagline: "从江汉路的老建筑走到东湖晚风，把盛夏武汉排成我们的双人主线。",
+    hotel: "卡曼时尚民宿（武汉王家湾地铁站店）",
+    hotelAddress: "龙阳大道19号1楼",
+    hotelPoint: { x: 34, y: 55 },
+    palette: ["#8f68de", "#f06bb5"],
+    weather: ["☀ 盛夏 35°", "🌦 33°", "☀ 36°", "☁ 34°", "☀ 35°"],
     points: [
-      p("cd-1", "人民公园鹤鸣茶社", "青羊区", 38, 47, "景点", 1, "上午先喝一碗盖碗茶", "靠湖边竹椅拍树影", "小红书热议", "linear-gradient(145deg,#6c8b6a,#d1b377)"),
-      p("cd-2", "宽窄巷子·井巷子", "青羊区", 34, 39, "拍照", 2, "避开主街，老砖墙更安静", "从拱门向里拍长巷", "城市推荐", "linear-gradient(145deg,#91674d,#d0a16d)"),
-      p("cd-3", "东郊记忆", "成华区", 75, 38, "拍照", 3, "工业风与旧厂房很好逛", "火车头旁低机位", "抖音热榜", "linear-gradient(145deg,#4b5961,#d36c46)"),
-      p("cd-4", "望平街·香香巷", "成华区", 61, 44, "街区", 4, "傍晚沿锦江慢慢散步", "桥上拍河岸灯光", "小红书热议", "linear-gradient(145deg,#487c78,#e2a65f)"),
-      p("cd-5", "文殊院红墙", "青羊区", 48, 31, "景点", 5, "古寺、银杏和素斋都在一起", "红墙竹影侧身构图", "本地口碑", "linear-gradient(145deg,#9f3f36,#d9b46f)"),
-      p("cd-6", "玉林路", "武侯区", 48, 68, "街区", 6, "小酒馆和社区小店很密集", "蓝调时刻拍街灯", "城市推荐", "linear-gradient(145deg,#31556b,#da7c5e)"),
-      p("cd-7", "成都自然博物馆", "成华区", 70, 26, "室内", 7, "下雨天也能舒服逛", "中庭楼梯对称构图", "亲子推荐", "linear-gradient(145deg,#78969a,#d9ccae)"),
-      p("cd-8", "杜甫草堂", "青羊区", 25, 51, "景点", 8, "竹林和茅屋很有成都气质", "水榭倒影与竹径", "经典必去", "linear-gradient(145deg,#486c4b,#c8ad77)"),
-      p("cd-f1", "明婷饭店", "金牛区", 43, 24, "餐厅", 1, "脑花豆腐和荷叶酱肉", "门头与圆桌烟火气", "必吃榜", "linear-gradient(145deg,#7c3228,#e8a455)"),
-      p("cd-f2", "饕林餐厅", "锦江区", 57, 55, "餐厅", 2, "家常川菜，适合多人点菜", "辣子鸡上桌俯拍", "本地口碑", "linear-gradient(145deg,#ac3f2f,#e8c16c)"),
-      p("cd-f3", "洞子口张老二凉粉", "青羊区", 43, 34, "餐厅", 3, "甜水面和黄凉粉", "窗口边拍红油光泽", "必吃小店", "linear-gradient(145deg,#ad4b2e,#e6b45f)"),
-      p("cd-f4", "甘记肥肠粉", "金牛区", 51, 22, "餐厅", 4, "现打粉配锅盔", "灶台蒸汽做前景", "本地早餐", "linear-gradient(145deg,#854330,#d9974d)")
+      p("wh-1", "黎黄陂路街头博物馆", "江岸区", 48, 40, "拍照", 1, "红砖洋房与梧桐街很适合情侣散步", "路牌与老建筑同框，傍晚光线最好", "小红书热议"),
+      p("wh-2", "江汉路步行街", "江汉区", 49, 49, "街区", 2, "老建筑、商场和夜景集中，适合第一晚", "江汉关方向拍城市纵深", "城市推荐"),
+      p("wh-3", "东湖听涛景区", "武昌区", 76, 48, "景点", 3, "傍晚看湖面和晚霞，体感比市中心舒服", "湖边栈道拍牵手背影", "经典必去"),
+      p("wh-4", "东湖磨山·楚城", "武昌区", 82, 55, "景点", 4, "山水与楚文化建筑适合安排半天", "楚城城门前低机位合照", "情侣推荐"),
+      p("wh-5", "昙华林", "武昌区", 59, 61, "街区", 5, "山坡街巷、咖啡店和小店密集", "利用坡道与屋顶拍层次", "小红书热议"),
+      p("wh-6", "粮道街", "武昌区", 61, 64, "街区", 6, "早餐和小吃集中，适合上午慢慢吃", "手拿小吃拍烟火感街景", "必吃街区"),
+      p("wh-7", "古德寺", "江岸区", 58, 34, "建筑", 7, "混合风格建筑辨识度很高", "回廊与穹顶做对称构图", "拍照热门"),
+      p("wh-8", "汉口江滩", "江岸区", 47, 36, "景点", 8, "晚上沿江散步，看灯光与轮渡", "蓝调时刻拍江景剪影", "夜游推荐"),
+      p("wh-f1", "三镇民生甜食馆", "江汉区", 50, 50, "餐厅", 1, "一次吃到热干面、豆皮和糊米酒", "早餐铺门口拍武汉烟火气", "早餐推荐"),
+      p("wh-f2", "老通城豆皮", "江汉区", 52, 49, "餐厅", 2, "三鲜豆皮是武汉经典早餐", "切面近拍糯米与馅料层次", "必吃小店"),
+      p("wh-f3", "夏氏砂锅", "江岸区", 48, 44, "餐厅", 3, "适合两个人一起点砂锅和藕汤", "砂锅上桌时拍蒸汽", "本地口碑"),
+      p("wh-f4", "靓靓蒸虾", "江岸区", 54, 40, "餐厅", 4, "夏天来武汉可以安排一顿小龙虾", "紫色夜景下拍双人碰杯", "夏季必吃")
     ]
   },
   杭州: {
@@ -45,50 +47,50 @@ const cityCatalog = {
       p("hz-f4", "游埠豆浆", "上城区", 55, 64, "餐厅", 4, "咸豆浆配油条烧饼", "清晨摊位烟火感", "早餐推荐", "linear-gradient(145deg,#8c513a,#d7ad69)")
     ]
   },
-  泉州: {
-    province: "福建",
-    roman: "QUANZHOU",
-    tagline: "沿着红砖古厝和寺庙香火，吃一圈闽南小味。",
-    hotel: "西街附近",
-    hotelPoint: { x: 46, y: 43 },
-    palette: ["#e8b9b3", "#d45738"],
-    weather: ["☀ 30°", "☁ 28°", "🌦 27°", "☀ 29°", "☀ 31°"],
+  北京: {
+    province: "北京",
+    roman: "BEIJING",
+    tagline: "从胡同晨光到中轴夜色，解锁一场古今交错的双人旅行。",
+    hotel: "王府井附近",
+    hotelPoint: { x: 52, y: 50 },
+    palette: ["#8f68de", "#f06bb5"],
+    weather: ["☀ 32°", "☁ 30°", "🌦 28°", "☀ 33°", "☁ 31°"],
     points: [
-      p("qz-1", "开元寺", "鲤城区", 41, 39, "景点", 1, "双塔和古榕是泉州封面", "红墙榕树留白构图", "经典必去", "linear-gradient(145deg,#ad3e34,#d4aa69)"),
-      p("qz-2", "西街钟楼", "鲤城区", 48, 43, "街区", 2, "骑楼、小吃与老城日常", "莓超疯天台拍双塔", "小红书热议", "linear-gradient(145deg,#b56c4f,#ddbc79)"),
-      p("qz-3", "蟳埔村", "丰泽区", 75, 57, "拍照", 3, "簪花围与蚵壳厝", "选素色衣服拍簪花", "抖音热榜", "linear-gradient(145deg,#6e8b8c,#d15f68)"),
-      p("qz-4", "关岳庙", "鲤城区", 54, 52, "景点", 4, "香火旺盛的闽南色彩", "红灯笼与屋脊同框", "城市推荐", "linear-gradient(145deg,#a72f2b,#d99e47)"),
-      p("qz-5", "承天寺", "鲤城区", 51, 44, "景点", 5, "安静清幽，白塔很特别", "月台与树影对称拍", "本地私藏", "linear-gradient(145deg,#769177,#d4c59d)"),
-      p("qz-6", "觅鲤文创园", "鲤城区", 55, 58, "街区", 6, "旧厂房里的闽南新潮", "红砖拱门做画框", "年轻人推荐", "linear-gradient(145deg,#8d5945,#d88b62)"),
-      p("qz-7", "洛伽寺", "石狮市", 89, 76, "景点", 7, "海上寺庙日落很美", "退潮时拍寺庙倒影", "小红书热议", "linear-gradient(145deg,#53849b,#d18c5a)"),
-      p("qz-8", "清净寺", "鲤城区", 53, 50, "建筑", 8, "石构拱门见证海丝", "拱券内框景", "世界遗产", "linear-gradient(145deg,#9d8c70,#cdbb91)"),
-      p("qz-f1", "斯丹姜母鸭", "鲤城区", 47, 47, "餐厅", 1, "姜香浓郁，鸭肉软烂", "砂锅上桌拍热气", "必吃榜", "linear-gradient(145deg,#7f3927,#d38445)"),
-      p("qz-f2", "水门国仔面线糊", "鲤城区", 51, 56, "餐厅", 2, "加醋肉和大肠最地道", "清晨门店生活感", "本地早餐", "linear-gradient(145deg,#9c5638,#d5a25d)"),
-      p("qz-f3", "秉正堂石花膏", "鲤城区", 45, 45, "餐厅", 3, "清甜消暑的古早味", "透明杯逆光拍", "必吃小店", "linear-gradient(145deg,#b78358,#dfc78b)"),
-      p("qz-f4", "阿姨鸡架", "鲤城区", 49, 42, "餐厅", 4, "甜辣口的西街夜宵", "纸袋街拍最有氛围", "夜宵推荐", "linear-gradient(145deg,#8e392b,#e08c4d)")
+      p("bj-1", "故宫博物院", "东城区", 49, 45, "景点", 1, "红墙金瓦是北京最经典的双人主线", "午门侧边利用红墙留白", "经典必去"),
+      p("bj-2", "景山公园", "西城区", 49, 39, "景点", 2, "登高俯瞰故宫中轴线", "万春亭前拍城市全景", "日落推荐"),
+      p("bj-3", "什刹海", "西城区", 42, 37, "街区", 3, "胡同、湖面和夜晚小店适合散步", "银锭桥拍湖面落日", "情侣推荐"),
+      p("bj-4", "五道营胡同", "东城区", 55, 34, "街区", 4, "咖啡馆与安静胡同适合慢逛", "灰墙树影下拍街头感", "小红书热议"),
+      p("bj-5", "天坛公园", "东城区", 54, 67, "景点", 5, "古建与松柏构成感很强", "祈年殿台阶下低机位", "经典必去"),
+      p("bj-6", "国家博物馆", "东城区", 51, 54, "室内", 6, "炎热或下雨天安排最舒服", "中央大厅拍对称构图", "室内推荐"),
+      p("bj-7", "鼓楼东大街", "东城区", 48, 33, "街区", 7, "老城与年轻小店融合", "鼓楼作为街道尽头背景", "城市漫步"),
+      p("bj-8", "亮马河国际风情水岸", "朝阳区", 73, 42, "景点", 8, "夜景和河岸氛围适合约会", "桥上拍水面灯光倒影", "夜游推荐"),
+      p("bj-f1", "四季民福烤鸭", "东城区", 51, 47, "餐厅", 1, "烤鸭和京味菜适合两个人分享", "靠窗位置拍故宫与烤鸭", "必吃榜"),
+      p("bj-f2", "方砖厂69号炸酱面", "东城区", 48, 35, "餐厅", 2, "胡同里的北京家常味", "小院门头与面碗同框", "必吃小店"),
+      p("bj-f3", "尹三豆汁", "东城区", 55, 58, "餐厅", 3, "想挑战老北京早餐可以尝试", "焦圈、咸菜与豆汁俯拍", "本地早餐"),
+      p("bj-f4", "牛街清真美食", "西城区", 39, 61, "餐厅", 4, "牛肉饼、糖火烧和奶酪都值得吃", "边走边拍小吃组合", "美食街区")
     ]
   },
-  大理: {
-    province: "云南",
-    roman: "DALI",
-    tagline: "把风、洱海和白族村落，排成留有空白的日子。",
-    hotel: "大理古城南门附近",
-    hotelPoint: { x: 36, y: 52 },
-    palette: ["#b7d7da", "#e17b55"],
-    weather: ["☀ 24°", "☁ 22°", "☀ 25°", "🌦 21°", "☀ 24°"],
+  南京: {
+    province: "江苏",
+    roman: "NANJING",
+    tagline: "梧桐、城墙和秦淮灯影，把六朝浪漫写进两个人的路线。",
+    hotel: "新街口附近",
+    hotelPoint: { x: 50, y: 50 },
+    palette: ["#8f68de", "#f06bb5"],
+    weather: ["☀ 34°", "🌦 31°", "☁ 32°", "☀ 35°", "☁ 33°"],
     points: [
-      p("dl-1", "龙龛码头", "大理市", 45, 48, "景点", 1, "日出与水杉很治愈", "栈道尽头拍海鸥", "小红书热议", "linear-gradient(145deg,#5c8ea2,#d0a66d)"),
-      p("dl-2", "喜洲古镇", "大理市", 47, 22, "街区", 2, "稻田、白族建筑和喜洲粑粑", "转角楼黄墙前侧拍", "经典必去", "linear-gradient(145deg,#c29954,#7d8870)"),
-      p("dl-3", "双廊古镇", "大理市", 78, 35, "景点", 3, "临海客栈与苍山远景", "海边玻璃窗框景", "抖音热榜", "linear-gradient(145deg,#56879e,#d1b48f)"),
-      p("dl-4", "磻溪S湾", "大理市", 48, 36, "拍照", 4, "骑行路线中的经典弯道", "长焦压缩人车与海", "小红书热议", "linear-gradient(145deg,#578d99,#b8cfa9)"),
-      p("dl-5", "寂照庵", "大理市", 25, 64, "景点", 5, "多肉小院与山寺素斋", "窗边花影静物构图", "本地私藏", "linear-gradient(145deg,#6f8e6e,#ceaa7b)"),
-      p("dl-6", "凤阳邑茶马古道", "大理市", 31, 67, "街区", 6, "土墙老屋与石板路", "逆光拍石板路轮廓", "城市推荐", "linear-gradient(145deg,#8e6e4d,#cfb183)"),
-      p("dl-7", "者摩山", "大理市", 27, 44, "景点", 7, "俯瞰洱海和整座城市", "傍晚用人做比例", "日落推荐", "linear-gradient(145deg,#707d83,#d8a15a)"),
-      p("dl-8", "沙溪古镇", "剑川县", 16, 13, "街区", 8, "保存完好的茶马古镇", "古戏台与老槐树同框", "值得专程", "linear-gradient(145deg,#765b43,#c9a66d)"),
-      p("dl-f1", "段公子·天龙八部店", "大理古城", 35, 53, "餐厅", 1, "酸辣鱼和乳扇入门友好", "铜锅与桌面俯拍", "必吃榜", "linear-gradient(145deg,#8f3529,#d99950)"),
-      p("dl-f2", "我在大理等你", "大理古城", 38, 50, "餐厅", 2, "野生菌与白族家常菜", "菌菇拼盘拍色彩", "人气餐厅", "linear-gradient(145deg,#875235,#cfad60)"),
-      p("dl-f3", "喜洲杨记破酥粑粑", "喜洲", 48, 23, "餐厅", 3, "甜咸各买一个", "刚出炉时掰开拍", "必吃小店", "linear-gradient(145deg,#a2673d,#dfb35f)"),
-      p("dl-f4", "再回首凉鸡米线", "大理古城", 36, 55, "餐厅", 4, "酸甜凉辣的古城小吃", "拌匀前拍配料层次", "本地小吃", "linear-gradient(145deg,#a6412e,#e0a04e)")
+      p("nj-1", "南京博物院", "玄武区", 63, 47, "室内", 1, "民国馆和馆藏适合避暑慢逛", "民国街景内拍复古合照", "经典必去"),
+      p("nj-2", "颐和路公馆区", "鼓楼区", 43, 39, "拍照", 2, "梧桐与民国建筑很有南京气质", "路口长焦拍梧桐纵深", "小红书热议"),
+      p("nj-3", "明孝陵石象路", "玄武区", 71, 36, "景点", 3, "神道石刻和树荫适合清晨", "石象之间拍并肩背影", "经典必去"),
+      p("nj-4", "陵园路梧桐大道", "玄武区", 69, 41, "拍照", 4, "南京代表性的浪漫梧桐路", "清晨在斑马线边缘拍摄", "情侣推荐"),
+      p("nj-5", "老门东", "秦淮区", 54, 67, "街区", 5, "古巷、小吃与夜景可以一起安排", "牌坊与灯笼做背景", "夜游推荐"),
+      p("nj-6", "南京城墙·解放门", "玄武区", 54, 38, "景点", 6, "可以同时看到城墙和玄武湖", "城墙砖道拍牵手远景", "城市推荐"),
+      p("nj-7", "先锋书店五台山店", "鼓楼区", 43, 48, "室内", 7, "地下空间和十字架入口很特别", "长坡入口拍电影感背影", "文艺推荐"),
+      p("nj-8", "夫子庙秦淮河", "秦淮区", 55, 63, "景点", 8, "建议晚上看灯影与游船", "文德桥上拍河面倒影", "经典夜游"),
+      p("nj-f1", "李记清真馆", "秦淮区", 51, 59, "餐厅", 1, "锅贴和牛肉馄饨很受欢迎", "锅贴焦脆面近拍", "必吃小店"),
+      p("nj-f2", "芳婆糕团店", "秦淮区", 50, 54, "餐厅", 2, "乌饭团、糖芋苗适合早餐", "早餐组合放在一起俯拍", "本地早餐"),
+      p("nj-f3", "章云板鸭", "秦淮区", 52, 57, "餐厅", 3, "南京盐水鸭可以带走当伴手礼", "切好的鸭肉自然光近拍", "本地口碑"),
+      p("nj-f4", "南京大牌档", "鼓楼区", 47, 47, "餐厅", 4, "一次尝试多种南京传统菜", "灯笼背景下拍双人晚餐", "人气餐厅")
     ]
   }
 };
@@ -106,8 +108,8 @@ function pixelGradient(id, kind) {
 }
 
 const state = {
-  city: "成都",
-  cityOrder: ["成都", "杭州", "泉州"],
+  city: "武汉",
+  cityOrder: ["武汉", "北京", "南京", "杭州"],
   days: 3,
   selectedDay: 0,
   plans: [],
@@ -116,7 +118,8 @@ const state = {
   filter: "全部",
   sketchVariant: 0,
   discoverOffset: 0,
-  automation: true
+  automation: true,
+  cityVersion: 4
 };
 
 const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -125,15 +128,23 @@ const els = {};
 let toastTimer;
 
 function loadState() {
+  let savedVersion = null;
   try {
     const saved = JSON.parse(localStorage.getItem("manyoujian-state") || "null");
+    savedVersion = saved?.cityVersion ?? null;
     if (saved) Object.assign(state, saved, { plans: [] });
   } catch (_) {}
+  if (savedVersion !== 4) {
+    state.city = "武汉";
+    state.cityVersion = 4;
+  }
+  state.cityOrder = ["武汉", "北京", "南京", "杭州"];
   Object.keys(cityCatalog).forEach((city) => {
     if (!Array.isArray(state.saved[city])) state.saved[city] = cityCatalog[city].points.filter((item) => item.kind !== "餐厅").slice(0, 5).map((item) => item.id);
     if (!Array.isArray(state.imported[city])) state.imported[city] = [];
   });
-  if (!cityCatalog[state.city]) state.city = "成都";
+  if (!cityCatalog[state.city]) state.city = "武汉";
+  saveState();
 }
 
 function saveState() {
@@ -142,7 +153,7 @@ function saveState() {
 }
 
 function cacheElements() {
-  ["cityStrip", "cityProvince", "heroCity", "cityTagline", "savedCount", "foodCount", "updateText", "linkForm", "shareLink", "pasteButton", "analyzeButton", "recognitionResult", "daysMinus", "daysPlus", "daysOutput", "hotelInput", "generateButton", "routeCity", "dayTabs", "dayDate", "dayTheme", "weatherChip", "routeMap", "mapNote", "distanceMetric", "stopsMetric", "paceMetric", "timeline", "recommendList", "refreshDiscover", "pocketList", "filterButton", "citySheetBackdrop", "citySheet", "cityOptions", "sketchModal", "closeSketch", "sketchCanvas", "sketchButton", "regenerateSketch", "downloadSketch", "toast", "automationToggle", "sharePlanButton"].forEach((id) => els[id] = document.getElementById(id));
+  ["cityStrip", "cityProvince", "heroCity", "cityTagline", "savedCount", "foodCount", "updateText", "linkForm", "shareLink", "pasteButton", "analyzeButton", "recognitionResult", "daysMinus", "daysPlus", "daysOutput", "hotelInput", "hotelHint", "generateButton", "routeCity", "dayTabs", "dayDate", "dayTheme", "weatherChip", "routeMap", "mapNote", "distanceMetric", "stopsMetric", "paceMetric", "timeline", "recommendList", "refreshDiscover", "pocketList", "filterButton", "citySheetBackdrop", "citySheet", "cityOptions", "sketchModal", "closeSketch", "sketchCanvas", "sketchButton", "regenerateSketch", "downloadSketch", "toast", "automationToggle", "sharePlanButton"].forEach((id) => els[id] = document.getElementById(id));
 }
 
 function init() {
@@ -219,6 +230,7 @@ function renderAll() {
   els.cityTagline.textContent = city.tagline;
   els.routeCity.textContent = state.city;
   els.hotelInput.value = city.hotel;
+  els.hotelHint.textContent = state.city === "武汉" ? `${city.hotelAddress} · 7/31 14:00后入住 · 8/2 12:00前退房` : "会从这里出发和收尾";
   els.daysOutput.innerHTML = `${state.days} <small>天</small>`;
   $(".hero").style.removeProperty("background");
   $(".hero-stamp span").textContent = city.roman;
@@ -353,9 +365,9 @@ function dominantArea(points) {
 
 function renderPlan() {
   if (!state.plans.length) return;
-  els.dayTabs.innerHTML = state.plans.map((plan, index) => `<button class="day-tab ${index === state.selectedDay ? "is-active" : ""}" data-day="${index}" type="button" role="tab" aria-selected="${index === state.selectedDay}"><b>DAY ${index + 1}</b>${getWeekday(index)}</button>`).join("");
+  els.dayTabs.innerHTML = state.plans.map((plan, index) => `<button class="day-tab ${index === state.selectedDay ? "is-active" : ""}" data-day="${index}" type="button" role="tab" aria-selected="${index === state.selectedDay}"><b>DAY ${index + 1}</b>${getMonthDay(index)} ${getWeekday(index)}</button>`).join("");
   const plan = state.plans[state.selectedDay];
-  els.dayDate.textContent = `DAY ${plan.day} · ${getWeekday(state.selectedDay)}`;
+  els.dayDate.textContent = `DAY ${plan.day} · ${getMonthDay(state.selectedDay)} ${getWeekday(state.selectedDay)}`;
   els.dayTheme.textContent = plan.title;
   els.weatherChip.textContent = plan.weather;
   els.distanceMetric.textContent = `${plan.distance.toFixed(1)} km`;
@@ -367,9 +379,20 @@ function renderPlan() {
 }
 
 function getWeekday(offset) {
-  const date = new Date();
-  date.setDate(date.getDate() + offset);
+  const date = getTripDate(offset);
   return date.toLocaleDateString("zh-CN", { weekday: "short" }).replace("周", "周");
+}
+
+function getMonthDay(offset) {
+  const date = getTripDate(offset);
+  return `${date.getMonth() + 1}/${date.getDate()}`;
+}
+
+function getTripDate(offset) {
+  const start = cityCatalog[state.city].tripStart;
+  const date = start ? new Date(`${start}T12:00:00`) : new Date();
+  date.setDate(date.getDate() + offset);
+  return date;
 }
 
 function renderMap(plan) {

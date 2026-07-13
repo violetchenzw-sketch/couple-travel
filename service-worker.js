@@ -1,4 +1,4 @@
-const CACHE_NAME = "manyoujian-v3-custom-couple";
+const CACHE_NAME = "manyoujian-v5-wuhan-wangjiawan";
 const APP_FILES = ["./", "./index.html", "./styles.css", "./app.js", "./icon.svg", "./assets/couple-sprites.svg", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
