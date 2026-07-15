@@ -2,6 +2,8 @@ const cityCatalog = {
   武汉: {
     province: "湖北 · 7/31入住 · 8/2退房",
     roman: "WUHAN 07.31",
+    scene: "./assets/scene-wuhan.svg",
+    couple: "./assets/couple-sprites.svg",
     tripStart: "2026-07-31",
     tagline: "从江汉路的老建筑走到东湖晚风，把盛夏武汉排成我们的双人主线。",
     hotel: "卡曼时尚民宿（武汉王家湾地铁站店）",
@@ -27,10 +29,12 @@ const cityCatalog = {
   杭州: {
     province: "浙江",
     roman: "HANGZHOU",
+    scene: "./assets/scene-hangzhou.svg",
+    couple: "./assets/couple-sprites-hangzhou.svg",
     tagline: "绕开人潮，从湖边、茶山一路走进老杭州。",
     hotel: "龙翔桥附近",
     hotelPoint: { x: 51, y: 49 },
-    palette: ["#abcbd6", "#db7655"],
+    palette: ["#4eaa70", "#c7dd76"],
     weather: ["☁ 25°", "🌦 23°", "☀ 27°", "☁ 24°", "☀ 28°"],
     points: [
       p("hz-1", "曲院风荷", "西湖区", 34, 39, "景点", 1, "清晨荷塘最安静", "曲桥做前景拍荷叶", "经典必去", "linear-gradient(145deg,#638b69,#b9c77b)"),
@@ -50,10 +54,12 @@ const cityCatalog = {
   北京: {
     province: "北京",
     roman: "BEIJING",
+    scene: "./assets/scene-beijing.svg",
+    couple: "./assets/couple-sprites-beijing.svg",
     tagline: "从胡同晨光到中轴夜色，解锁一场古今交错的双人旅行。",
     hotel: "王府井附近",
     hotelPoint: { x: 52, y: 50 },
-    palette: ["#8f68de", "#f06bb5"],
+    palette: ["#dc3f48", "#f3be55"],
     weather: ["☀ 32°", "☁ 30°", "🌦 28°", "☀ 33°", "☁ 31°"],
     points: [
       p("bj-1", "故宫博物院", "东城区", 49, 45, "景点", 1, "红墙金瓦是北京最经典的双人主线", "午门侧边利用红墙留白", "经典必去"),
@@ -73,10 +79,12 @@ const cityCatalog = {
   南京: {
     province: "江苏",
     roman: "NANJING",
+    scene: "./assets/scene-nanjing.svg",
+    couple: "./assets/couple-sprites-nanjing.svg",
     tagline: "梧桐、城墙和秦淮灯影，把六朝浪漫写进两个人的路线。",
     hotel: "新街口附近",
     hotelPoint: { x: 50, y: 50 },
-    palette: ["#8f68de", "#f06bb5"],
+    palette: ["#397fb7", "#78c9e9"],
     weather: ["☀ 34°", "🌦 31°", "☁ 32°", "☀ 35°", "☁ 33°"],
     points: [
       p("nj-1", "南京博物院", "玄武区", 63, 47, "室内", 1, "民国馆和馆藏适合避暑慢逛", "民国街景内拍复古合照", "经典必去"),
@@ -100,9 +108,14 @@ function p(id, name, area, x, y, kind, rank, reason, photoTip, source, gradient)
 }
 
 function pixelGradient(id, kind) {
-  const palettes = kind === "餐厅"
-    ? [["#5c246f", "#f06bb5"], ["#6a315f", "#ffd166"], ["#44206f", "#e967a6"]]
-    : [["#38236c", "#8c63dd"], ["#253a72", "#65e0d5"], ["#5a287f", "#d06fe2"], ["#3c2868", "#f06bb5"]];
+  const cityKey = id.split("-")[0];
+  const cityPalettes = {
+    wh: kind === "餐厅" ? [["#5c246f", "#f06bb5"], ["#6a315f", "#ffd166"]] : [["#38236c", "#8c63dd"], ["#253a72", "#65e0d5"], ["#5a287f", "#d06fe2"]],
+    bj: kind === "餐厅" ? [["#71151c", "#f3be55"], ["#8f2026", "#ff8c74"]] : [["#67111a", "#dc3f48"], ["#8f1d28", "#f3be55"], ["#4d0b12", "#b92f39"]],
+    hz: kind === "餐厅" ? [["#285d40", "#c7dd76"], ["#1c604d", "#6ed6ba"]] : [["#164a3d", "#4eaa70"], ["#285c4b", "#92cf82"], ["#123e36", "#6ed6ba"]],
+    nj: kind === "餐厅" ? [["#173e65", "#78c9e9"], ["#29477a", "#9a9ee9"]] : [["#12385d", "#397fb7"], ["#16446e", "#78c9e9"], ["#242f6e", "#7795dc"]]
+  };
+  const palettes = cityPalettes[cityKey] || cityPalettes.wh;
   const index = [...id].reduce((sum, char) => sum + char.charCodeAt(0), 0) % palettes.length;
   return `linear-gradient(135deg,${palettes[index][0]},${palettes[index][1]})`;
 }
@@ -153,7 +166,7 @@ function saveState() {
 }
 
 function cacheElements() {
-  ["cityStrip", "cityProvince", "heroCity", "cityTagline", "savedCount", "foodCount", "updateText", "linkForm", "shareLink", "pasteButton", "analyzeButton", "recognitionResult", "daysMinus", "daysPlus", "daysOutput", "hotelInput", "hotelHint", "generateButton", "routeCity", "dayTabs", "dayDate", "dayTheme", "weatherChip", "routeMap", "mapNote", "distanceMetric", "stopsMetric", "paceMetric", "timeline", "recommendList", "refreshDiscover", "pocketList", "filterButton", "citySheetBackdrop", "citySheet", "cityOptions", "sketchModal", "closeSketch", "sketchCanvas", "sketchButton", "regenerateSketch", "downloadSketch", "toast", "automationToggle", "sharePlanButton"].forEach((id) => els[id] = document.getElementById(id));
+  ["cityStrip", "cityProvince", "heroCity", "cityTagline", "cityScene", "coupleImage", "savedCount", "foodCount", "updateText", "linkForm", "shareLink", "pasteButton", "analyzeButton", "recognitionResult", "daysMinus", "daysPlus", "daysOutput", "hotelInput", "hotelHint", "generateButton", "routeCity", "dayTabs", "dayDate", "dayTheme", "weatherChip", "routeMap", "mapNote", "distanceMetric", "stopsMetric", "paceMetric", "timeline", "recommendList", "refreshDiscover", "pocketList", "filterButton", "citySheetBackdrop", "citySheet", "cityOptions", "sketchModal", "closeSketch", "sketchCanvas", "sketchButton", "regenerateSketch", "downloadSketch", "toast", "automationToggle", "sharePlanButton"].forEach((id) => els[id] = document.getElementById(id));
 }
 
 function init() {
@@ -225,9 +238,13 @@ function bindEvents() {
 
 function renderAll() {
   const city = cityCatalog[state.city];
+  document.body.dataset.city = state.city;
   els.cityProvince.textContent = city.province;
   els.heroCity.textContent = state.city;
   els.cityTagline.textContent = city.tagline;
+  els.cityScene.src = city.scene;
+  els.cityScene.alt = `${state.city}像素城市特色场景`;
+  els.coupleImage.src = city.couple;
   els.routeCity.textContent = state.city;
   els.hotelInput.value = city.hotel;
   els.hotelHint.textContent = state.city === "武汉" ? `${city.hotelAddress} · 7/31 14:00后入住 · 8/2 12:00前退房` : "会从这里出发和收尾";
@@ -543,6 +560,16 @@ function drawSketch() {
   const city = cityCatalog[state.city];
   const seed = state.sketchVariant + state.selectedDay * 11 + state.city.length;
   const rnd = mulberry32(seed);
+  // Canvas 的文字对齐、旋转等状态会跨重绘保留。每次先完全复位，
+  // 避免手机浏览器第二次点击“换个排版”时标题向左偏移并被裁掉。
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = "source-over";
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  ctx.lineCap = "butt";
+  ctx.lineJoin = "miter";
+  ctx.setLineDash([]);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "#fff9eb";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -565,7 +592,7 @@ function drawSketch() {
   ctx.fillText(`${state.city}慢游`, 46, 150);
   ctx.font = '700 26px "PingFang SC", sans-serif';
   ctx.fillText(`DAY ${plan.day}  /  ${plan.title}`, 49, 201);
-  ctx.fillStyle = "#ff6b3d";
+  ctx.fillStyle = city.palette[1];
   ctx.beginPath(); ctx.arc(820, 108, 70, 0, Math.PI * 2); ctx.fill();
   ctx.strokeStyle = "#213029"; ctx.lineWidth = 5; ctx.stroke();
   ctx.fillStyle = "#fff9eb"; ctx.textAlign = "center"; ctx.font = '900 33px "PingFang SC", sans-serif'; ctx.fillText("去走", 820, 118);
@@ -593,7 +620,7 @@ function drawSketch() {
   }));
   ctx.strokeStyle = "#fff9eb"; ctx.lineWidth = 18; ctx.lineCap = "round"; ctx.lineJoin = "round";
   ctx.beginPath(); coords.forEach((item, index) => index ? ctx.lineTo(item.px, item.py) : ctx.moveTo(item.px, item.py)); ctx.stroke();
-  ctx.strokeStyle = "#ff6b3d"; ctx.lineWidth = 8; ctx.setLineDash([18, 15]);
+  ctx.strokeStyle = city.palette[1]; ctx.lineWidth = 8; ctx.setLineDash([18, 15]);
   ctx.beginPath(); coords.forEach((item, index) => index ? ctx.lineTo(item.px, item.py) : ctx.moveTo(item.px, item.py)); ctx.stroke(); ctx.setLineDash([]);
   coords.forEach((item, index) => {
     ctx.fillStyle = index ? "#f2d16c" : "#213029";
@@ -608,7 +635,7 @@ function drawSketch() {
   ctx.fillStyle = "#213029"; ctx.textAlign = "left"; ctx.font = '900 23px "PingFang SC", sans-serif'; ctx.fillText(`少绕路约 ${plan.saving}%`, 118, 822);
 
   ctx.fillStyle = "#213029"; ctx.font = '900 35px "PingFang SC", sans-serif'; ctx.fillText("今天这样走", 76, 936);
-  ctx.strokeStyle = "#ff6b3d"; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(74, 951); ctx.quadraticCurveTo(176, 938, 286, 951); ctx.stroke();
+  ctx.strokeStyle = city.palette[1]; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(74, 951); ctx.quadraticCurveTo(176, 938, 286, 951); ctx.stroke();
 
   const startY = 995;
   const rowH = 92;
@@ -627,7 +654,7 @@ function drawSketch() {
 
   ctx.fillStyle = "#213029"; ctx.textAlign = "left"; ctx.font = '700 20px "PingFang SC", sans-serif';
   ctx.fillText(`从「${shortName(city.hotel, 10)}」出发 · ${plan.distance.toFixed(1)}km · ${plan.points.length}站`, 76, 1390);
-  ctx.textAlign = "right"; ctx.fillStyle = "#ff6b3d"; ctx.font = '900 20px "PingFang SC", sans-serif'; ctx.fillText("漫游笺 · 收藏变路书", 1005, 1390);
+  ctx.textAlign = "right"; ctx.fillStyle = city.palette[1]; ctx.font = '900 20px "PingFang SC", sans-serif'; ctx.fillText("双人漫游簿 · 收藏变路书", 1005, 1390);
 }
 
 function roughStroke(ctx, x, y, w, h, r, color, width) {

@@ -1,5 +1,5 @@
-const CACHE_NAME = "manyoujian-v5-wuhan-wangjiawan";
-const APP_FILES = ["./", "./index.html", "./styles.css", "./app.js", "./icon.svg", "./assets/couple-sprites.svg", "./manifest.webmanifest"];
+const CACHE_NAME = "manyoujian-v8-city-themes";
+const APP_FILES = ["./", "./index.html", "./styles.css", "./app.js", "./icon.svg", "./assets/couple-sprites.svg", "./assets/couple-sprites-beijing.svg", "./assets/couple-sprites-hangzhou.svg", "./assets/couple-sprites-nanjing.svg", "./assets/scene-wuhan.svg", "./assets/scene-beijing.svg", "./assets/scene-hangzhou.svg", "./assets/scene-nanjing.svg", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_FILES)));
